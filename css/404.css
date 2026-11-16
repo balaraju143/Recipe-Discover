@@ -1,0 +1,402 @@
+
+/* =====================================
+   STACKLY RECIPE DISCOVERY - 404 PAGE
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f5f3ed;
+    color: #17241b;
+}
+
+.error-page {
+    min-height: 100vh;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =====================================
+   SMALL ERROR CARD
+===================================== */
+
+.error-card {
+    position: relative;
+    width: 100%;
+    max-width: 570px;
+    padding: 28px 35px 24px;
+    border-radius: 22px;
+    background: #315d43;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(23, 36, 27, 0.13);
+    border: 1px solid rgba(201, 255, 145, 0.2);
+}
+
+.error-card::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: rgba(201, 255, 145, 0.07);
+    filter: blur(55px);
+    pointer-events: none;
+}
+
+.error-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =====================================
+   LOGO
+===================================== */
+
+.error-logo {
+    display: inline-flex;
+    justify-content: center;
+    margin-bottom: 17px;
+}
+
+.error-logo img {
+    width: 145px;
+    height: 40px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+
+/* =====================================
+   404 NUMBER
+===================================== */
+
+.error-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 105px;
+    margin-bottom: 8px;
+}
+
+.error-number > span {
+    color: rgba(201, 255, 145, 0.23);
+    font-size: 112px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -9px;
+}
+
+.error-icon {
+    width: 85px;
+    height: 85px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(201, 255, 145, 0.65);
+    border-radius: 50%;
+    background: rgba(201, 255, 145, 0.08);
+    box-shadow: 0 0 0 6px rgba(201, 255, 145, 0.06);
+}
+
+.error-icon .material-symbols-outlined {
+    color: #c9ff91;
+    font-size: 43px;
+}
+
+
+/* =====================================
+   LABEL
+===================================== */
+
+.error-label {
+    display: inline-block;
+    margin: 10px 0 13px;
+    padding: 7px 15px;
+    border: 1px solid rgba(201, 255, 145, 0.45);
+    border-radius: 30px;
+    color: #c9ff91;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+
+/* =====================================
+   HEADING
+===================================== */
+
+.error-card h1 {
+    margin-bottom: 11px;
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: clamp(31px, 4vw, 40px);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.error-card h1 em {
+    color: #c9ff91;
+    font-weight: 400;
+}
+
+
+/* =====================================
+   DESCRIPTION
+===================================== */
+
+.error-description {
+    max-width: 420px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.error-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 11px;
+    margin-top: 22px;
+}
+
+.error-home-btn,
+.error-back-btn {
+    min-width: 135px;
+    height: 44px;
+    padding: 0 17px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border-radius: 40px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.error-home-btn {
+    background: #c9ff91;
+    color: #17241b;
+    border: 1px solid #c9ff91;
+}
+
+.error-home-btn:hover {
+    background: #fff;
+    border-color: #fff;
+    transform: translateY(-2px);
+}
+
+.error-home-btn .material-symbols-outlined {
+    font-size: 17px;
+}
+
+.error-back-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    color: #fff;
+}
+
+.error-back-btn:hover {
+    background: #fff;
+    color: #17241b;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================
+   ERROR CODE
+===================================== */
+
+.error-code {
+    margin-top: 21px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.error-code strong {
+    color: #c9ff91;
+}
+
+
+/* =====================================
+   FOOTER TEXT
+===================================== */
+
+.error-footer-text {
+    margin-top: 14px;
+    color: #315d43;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    text-align: center;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 768px) {
+
+    .error-card {
+        max-width: 510px;
+        padding: 27px 25px 23px;
+    }
+
+    .error-number > span {
+        font-size: 105px;
+    }
+
+    .error-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 480px) {
+
+    .error-page {
+        padding: 18px 13px;
+    }
+
+    .error-card {
+        max-width: 370px;
+        padding: 27px 17px 23px;
+        border-radius: 18px;
+    }
+
+    .error-logo {
+        margin-bottom: 16px;
+    }
+
+    .error-logo img {
+        width: 125px;
+        height: 35px;
+    }
+
+    .error-number {
+        height: 85px;
+        gap: 3px;
+    }
+
+    .error-number > span {
+        font-size: 85px;
+        letter-spacing: -7px;
+    }
+
+    .error-icon {
+        width: 68px;
+        height: 68px;
+        box-shadow: 0 0 0 5px rgba(201, 255, 145, 0.06);
+    }
+
+    .error-icon .material-symbols-outlined {
+        font-size: 35px;
+    }
+
+    .error-label {
+        margin: 10px 0 12px;
+        padding: 7px 11px;
+        font-size: 8px;
+        letter-spacing: 1.3px;
+    }
+
+    .error-card h1 {
+        font-size: 31px;
+    }
+
+    .error-description {
+        font-size: 11px;
+    }
+
+    .error-buttons {
+        gap: 9px;
+        margin-top: 20px;
+    }
+
+    .error-home-btn,
+    .error-back-btn {
+        min-width: 120px;
+        height: 41px;
+        padding: 0 12px;
+        font-size: 11px;
+    }
+
+    .error-code {
+        margin-top: 19px;
+    }
+
+    .error-footer-text {
+        font-size: 15px;
+    }
+
+}
+
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 350px) {
+
+    .error-card {
+        padding: 24px 12px 21px;
+    }
+
+    .error-number > span {
+        font-size: 72px;
+    }
+
+    .error-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .error-card h1 {
+        font-size: 27px;
+    }
+
+    .error-buttons {
+        flex-direction: column;
+    }
+
+    .error-home-btn,
+    .error-back-btn {
+        width: 180px;
+    }
+
+}

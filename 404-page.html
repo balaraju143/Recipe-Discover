@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>404 | Stackly Recipe Discovery</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/404.css">
+</head>
+
+<body>
+
+    <main class="error-page">
+
+        <section class="error-card">
+
+            <!-- LOGO -->
+            <a href="index.html" class="error-logo">
+                <img src="assets/black-logo.webp" alt="Stackly Logo">
+            </a>
+
+
+            <!-- ERROR NUMBER -->
+            <div class="error-number">
+
+                <span>4</span>
+
+                <div class="error-icon">
+                    <span class="material-symbols-outlined">
+                        restaurant
+                    </span>
+                </div>
+
+                <span>4</span>
+
+            </div>
+
+
+            <!-- LABEL -->
+            <span class="error-label">
+                A LITTLE LOST IN THE KITCHEN
+            </span>
+
+
+            <!-- CONTENT -->
+            <h1>
+                Oops! This recipe<br>
+                <em>is missing.</em>
+            </h1>
+
+            <p class="error-description">
+                Looks like this page isn't on our menu anymore.
+                Let's get you back to delicious recipes,
+                fresh flavours and cooking inspiration.
+            </p>
+
+
+            <!-- BUTTONS -->
+            <div class="error-buttons">
+
+                <a href="index.html" class="error-home-btn">
+                    <span class="material-symbols-outlined">
+                        home
+                    </span>
+                    Back to Home
+                </a>
+
+                <button type="button"
+                        class="error-back-btn"
+                        id="goBackBtn">
+                    Go Back
+                </button>
+
+            </div>
+
+
+            <!-- ERROR CODE -->
+            <div class="error-code">
+                ERROR CODE <strong>404</strong>
+            </div>
+
+        </section>
+
+
+        <!-- BOTTOM TEXT -->
+        <p class="error-footer-text">
+            Made with love. Served with flavour.
+        </p>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+        document.getElementById("goBackBtn").addEventListener("click", function () {
+
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "index.html";
+            }
+
+        });
+    </script>
+
+</body>
+</html>
