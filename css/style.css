@@ -60,10 +60,11 @@ body {
 }
 
 .stackly-logo {
-    width: 145px;
+    width: 175px;
     height: 62px;
     object-fit: contain;
     display: block;
+    margin-left: 40px;
 }
 
 /* CENTER MENU */
@@ -217,8 +218,9 @@ body {
     }
 
     .stackly-logo {
-        width: 125px;
-        height: 38px;
+        width: 155px;
+        height: 48px;
+        margin-left: 0;
     }
 
     /* HIDE DESKTOP LOGIN */
@@ -317,7 +319,7 @@ body {
 @media (max-width: 380px) {
 
     .stackly-logo {
-        width: 110px;
+        width: 150px;
     }
 
     .stackly-navbar {

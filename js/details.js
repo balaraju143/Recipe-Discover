@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Creamy Italian Pasta",
             category: "Lunch",
             time: 30,
-            image: "assets/pasta.webp",
+            image: "assets/pasta (1).webp",
             description: "A comforting Italian-style pasta coated in a creamy sauce with herbs and vegetables.",
             ingredients: [
                 "200g pasta",
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Homemade Vegetable Pizza",
             category: "Dinner",
             time: 40,
-            image: "assets/pizza.webp",
+            image: "assets/pizza-homemade.webp",
             description: "A homemade pizza topped with colourful vegetables, tomato sauce and melted cheese.",
             ingredients: [
                 "1 pizza base",
@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Chocolate Lava Cake",
             category: "Desserts",
             time: 30,
-            image: "assests/chocolate-cake.webp",
+            image: "assets/chocolate-cake.webp",
             description: "A rich chocolate dessert with a soft cake outside and a delicious melted chocolate centre.",
             ingredients: [
                 "100g dark chocolate",
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Fresh Fruit Dessert",
             category: "Desserts",
             time: 15,
-            image: "assets/fresh-fruit",
+            image: "assets/fresh-fruit.webp",
             description: "A colourful and refreshing dessert made with seasonal fruits and creamy yogurt.",
             ingredients: [
                 "1 apple",

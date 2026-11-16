@@ -11,8 +11,8 @@
     background: #f5f3ed;
     display: flex;
     align-items: center;
-    padding: 75px 6% 55px;
-    background-image: url("https://images.openai.com/static-rsc-4/KHXulP_rkFVwPnQXHlmaXB71MqcoGeoUI4T3Zp7mbxTTWZoZhwn34rZwVlCZm_Da08HT0ODGpRAOb3Y2FzeMTuqUCaBKnlz4qjm9gpp1VuV0NiRy7KJrbR04m5UtVo1WgG-P84YvFeqE3p4uks5TNyjxbodOl3wqzHpuo1BDQ-H4QJuyBUNorN5hcTEcDLgJ?purpose=fullsize");
+    padding: 125px 6% 55px;
+    background-image: url("../assets/recipe-hero.webp");
 }
 
 /* BACKGROUND SHAPE */
@@ -391,7 +391,7 @@
 
     .recipe-hero {
         min-height: auto;
-        padding: 65px 6% 45px;
+        padding: 95px 6% 45px;
     }
 
     .hero-container {
@@ -554,7 +554,7 @@
 @media (max-width: 420px) {
 
     .recipe-hero {
-        padding: 50px 5% 35px;
+        padding: 90px 5% 35px;
     }
 
     .hero-title {
