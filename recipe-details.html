@@ -1,0 +1,446 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly | Recipe Details</title>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+        rel="stylesheet">
+
+    <!-- CSS FILES -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/details.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+</head>
+
+<body>
+
+    <!-- =====================================
+         NAVBAR START
+    ====================================== -->
+
+    <header class="stackly-header">
+
+        <nav class="stackly-navbar">
+
+            <!-- LOGO -->
+            <div class="navbar-logo">
+
+                <a href="index.html">
+                    <img src="assets/black-logo.webp"
+                         alt="Stackly Logo"
+                         class="stackly-logo">
+                </a>
+
+            </div>
+
+
+            <!-- CENTER NAVIGATION -->
+            <div class="navbar-menu" id="navbarMenu">
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="index.html" class="nav-link">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="explore.html" class="nav-link active">
+                            Explore Recipes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="meal-plan.html" class="nav-link">
+                            My Meal Plan
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <!-- MOBILE LOGIN -->
+                <a href="404.html" class="mobile-login-btn">
+                    Login
+                </a>
+
+            </div>
+
+
+            <!-- DESKTOP LOGIN -->
+            <div class="navbar-actions">
+
+                <a href="404.html" class="navbar-login-btn">
+                    Login
+                    <span class="login-dot"></span>
+                </a>
+
+            </div>
+
+
+            <!-- MOBILE HAMBURGER -->
+            <button class="hamburger-menu"
+                    id="hamburgerMenu"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="navbarMenu">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================
+         RECIPE DETAILS MAIN
+    ====================================== -->
+
+    <main class="details-page">
+
+        <!-- BREADCRUMB -->
+        <div class="details-breadcrumb">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <span class="material-symbols-outlined">
+                chevron_right
+            </span>
+
+            <a href="explore.html">
+                Explore Recipes
+            </a>
+
+            <span class="material-symbols-outlined">
+                chevron_right
+            </span>
+
+            <span>
+                Recipe Details
+            </span>
+
+        </div>
+
+
+        <!-- RECIPE CONTENT -->
+        <section id="recipeDetails"
+                 class="recipe-details-container">
+
+            <p class="details-loading">
+                Loading recipe details...
+            </p>
+
+        </section>
+
+
+        <!-- INVALID RECIPE MESSAGE -->
+        <section id="invalidRecipe"
+                 class="invalid-recipe"
+                 hidden>
+
+            <span class="material-symbols-outlined">
+                restaurant
+            </span>
+
+            <h2>
+                Recipe Not Found
+            </h2>
+
+            <p>
+                Sorry, we couldn't find this recipe.
+            </p>
+
+            <a href="explore.html">
+                Explore All Recipes
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================
+         FOOTER START
+    ====================================== -->
+
+    <footer class="stackly-footer">
+
+
+        <!-- FOOTER MAIN CONTENT -->
+        <div class="footer-main">
+
+
+            <!-- BRAND COLUMN -->
+            <div class="footer-brand">
+
+                <a href="index.html"
+                   class="footer-logo-link">
+
+                    <img src="assets/black-logo.webp"
+                         alt="Stackly Recipe Discovery"
+                         class="footer-logo">
+
+                </a>
+
+
+                <p class="footer-description">
+
+                    Bringing people together through delicious food,
+                    fresh ingredients and everyday cooking inspiration.
+
+                </p>
+
+
+                <!-- SOCIAL ICONS -->
+                <div class="footer-social">
+
+                    <a href="404.html"
+                       aria-label="Instagram">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                    </a>
+
+
+                    <a href="404.html"
+                       aria-label="Facebook">
+
+                        <i class="fa-brands fa-facebook-f"></i>
+
+                    </a>
+
+
+                    <a href="404.html"
+                       aria-label="Pinterest">
+
+                        <i class="fa-brands fa-pinterest-p"></i>
+
+                    </a>
+
+
+                    <a href="404.html"
+                       aria-label="YouTube">
+
+                        <i class="fa-brands fa-youtube"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXPLORE COLUMN -->
+            <div class="footer-column">
+
+                <h3>
+                    Explore
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="explore.html">
+                            Explore Recipes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="meal-plan.html">
+                            My Meal Plan
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Popular Recipes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Recipe Categories
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- HELP COLUMN -->
+            <div class="footer-column">
+
+                <h3>
+                    Help & Support
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="404.html">
+                            Cooking Guide
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Recipe Tips
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            FAQs
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            About Ingredients
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Customer Support
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- CONTACT COLUMN -->
+            <div class="footer-column footer-contact">
+
+                <h3>
+                    Contact Us
+                </h3>
+
+
+                <div class="footer-contact-item">
+
+                    <span class="material-symbols-outlined">
+                        location_on
+                    </span>
+
+                    <p>
+                        Stackly Recipe Discovery,
+                        <br>
+                        Food & Cooking Inspiration,
+                        <br>
+                        India.
+                    </p>
+
+                </div>
+
+
+                <a href="404.html"
+                   class="footer-contact-item">
+
+                    <span class="material-symbols-outlined">
+                        mail
+                    </span>
+
+                    <span>
+                        Contact Support
+                    </span>
+
+                </a>
+
+
+                <a href="404.html"
+                   class="footer-contact-item">
+
+                    <span class="material-symbols-outlined">
+                        schedule
+                    </span>
+
+                    <span>
+                        Help & Information
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Stackly. All Rights Reserved.
+            </p>
+
+
+            <div class="footer-bottom-links">
+
+                <a href="404.html">
+                    Terms & Conditions
+                </a>
+
+                <a href="404.html">
+                    Privacy Policy
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="js/script.js"></script>
+
+    <script src="js/details.js"></script>
+
+</body>
+
+</html>

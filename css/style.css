@@ -1,0 +1,743 @@
+
+/* =====================================
+   STACKLY RECIPE DISCOVERY NAVBAR
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f5f3ed;
+}
+
+/* HEADER */
+
+.stackly-header {
+    width: 100%;
+    padding: 8px 3%;
+    position: relative;
+    z-index: 1000;
+}
+
+/* NAVBAR */
+.stackly-navbar {
+    width: 100%;
+    min-height: 68px;
+    padding: 8px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255, 255, 255, 0.90);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+
+    position: fixed;
+    top: 8px;
+    left: 0;
+    z-index: 9999;
+}
+
+/* LOGO */
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.stackly-logo {
+    width: 145px;
+    height: 62px;
+    object-fit: contain;
+    display: block;
+}
+
+/* CENTER MENU */
+
+.navbar-menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 5px;
+    background: #f5f3ed;
+    border-radius: 50px;
+}
+
+.nav-links li {
+    display: flex;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #34342f;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    padding: 12px 20px;
+    border-radius: 50px;
+
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #151512;
+    color: #ffffff;
+}
+
+/* DESKTOP LOGIN */
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.navbar-login-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    text-decoration: none;
+    color: #ffffff;
+
+    background: #151512;
+    padding: 12px 24px;
+
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.navbar-login-btn:hover {
+    background: #315d43;
+}
+
+.login-dot {
+    width: 7px;
+    height: 7px;
+    background: #e56b42;
+    border-radius: 50%;
+}
+
+/* MOBILE LOGIN HIDDEN */
+
+.mobile-login-btn {
+    display: none;
+}
+
+/* HAMBURGER */
+
+.hamburger-menu {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    background: #151512;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    z-index: 5;
+}
+
+.hamburger-menu span {
+    width: 18px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+/* HAMBURGER ANIMATION */
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .stackly-header {
+        padding: 8px 3%;
+    }
+
+    .stackly-navbar {
+        min-height: 62px;
+        padding: 7px 12px 7px 16px;
+        border-radius: 40px;
+    }
+
+    .stackly-logo {
+        width: 125px;
+        height: 38px;
+    }
+
+    /* HIDE DESKTOP LOGIN */
+
+    .navbar-actions {
+        display: none;
+    }
+
+    /* SHOW HAMBURGER */
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    /* MOBILE NAVIGATION */
+
+    .navbar-menu {
+        position: absolute;
+
+        top: calc(100% + 10px);
+        left: 0;
+
+        width: 100%;
+        padding: 25px 20px;
+
+        background: #ffffff;
+        border-radius: 22px;
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        transform: translateY(-10px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition: 0.3s ease;
+    }
+
+    .navbar-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+
+        background: transparent;
+        gap: 8px;
+        padding: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-link {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 13px 15px;
+        font-size: 15px;
+    }
+
+    /* MOBILE LOGIN BUTTON */
+
+    .mobile-login-btn {
+        display: block;
+
+        width: 100%;
+        text-align: center;
+
+        text-decoration: none;
+        color: #ffffff;
+
+        background: #151512;
+        padding: 13px 20px;
+
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+
+    .stackly-logo {
+        width: 110px;
+    }
+
+    .stackly-navbar {
+        padding-left: 12px;
+    }
+
+}
+
+
+
+/* =====================================
+   STACKLY RECIPE DISCOVERY FOOTER
+===================================== */
+
+.stackly-footer {
+    width: 100%;
+    background:#315d43;
+    color: #fffaf1;
+    padding: 65px 4% 0;
+    overflow: hidden;
+}
+
+/* FOOTER TOP */
+
+.footer-top {
+    width: 100%;
+    padding-bottom: 45px;
+    border-bottom: 1px solid rgba(255,255,255,0.35);
+}
+
+.footer-top-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.footer-top-heading h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(45px, 5vw, 72px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -2px;
+    color: #fffaf1;
+}
+
+.footer-top-heading h2 span {
+    font-style: italic;
+}
+
+.footer-top-heading p {
+    max-width: 460px;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #f1e9dd;
+}
+
+
+/* =====================================
+   FOOTER MAIN
+===================================== */
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.6fr 0.8fr 0.95fr 1.15fr;
+    gap: 55px;
+
+    padding: 55px 0 65px;
+}
+
+/* BRAND */
+
+.footer-brand {
+    max-width: 350px;
+}
+
+.footer-logo-link {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.footer-logo {
+    width: 205px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+}
+
+.footer-description {
+    max-width: 340px;
+    font-size: 14px;
+    line-height: 2;
+    color: #f0e8dc;
+    margin-bottom: 25px;
+}
+
+
+/* =====================================
+   SOCIAL ICONS
+===================================== */
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-social a {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f8f2e8;
+    color: #34291f;
+
+    border-radius: 50%;
+    text-decoration: none;
+
+    font-size: 18px;
+    transition: all 0.35s ease;
+}
+
+.footer-social a:hover {
+    background: #c9ff91;
+    color: #17241b;
+    transform: translateY(-5px);
+}
+
+
+/* =====================================
+   FOOTER COLUMNS
+===================================== */
+
+.footer-column h3 {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: #fffaf1;
+    margin-bottom: 25px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 14px;
+}
+
+.footer-column ul li a {
+    color: #f0e8dc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #c9ff91;
+    padding-left: 5px;
+}
+
+
+/* =====================================
+   CONTACT DETAILS
+===================================== */
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    color: #f0e8dc;
+    text-decoration: none;
+
+    font-size: 14px;
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+    transition: 0.3s ease;
+}
+
+.footer-contact-item i {
+    color: #c9ff91;
+    font-size: 18px;
+    margin-top: 4px;
+    min-width: 18px;
+}
+
+.footer-contact-item:hover {
+    color: #c9ff91;
+}
+
+
+/* =====================================
+   FOOTER BOTTOM
+===================================== */
+
+.footer-bottom {
+    min-height: 60px;
+    border-top: 1px solid rgba(255,255,255,0.35);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: #f0e8dc;
+}
+
+.footer-bottom-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-bottom-links a {
+    color: #f0e8dc;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: #c9ff91;
+}
+
+
+/* =====================================
+   TABLET RESPONSIVE
+===================================== */
+
+@media (max-width: 1024px) {
+
+    .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 45px;
+    }
+
+    .footer-top-heading h2 {
+        font-size: 52px;
+    }
+
+    .footer-top-heading p {
+        max-width: 350px;
+        font-size: 15px;
+    }
+
+}
+
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 600px) {
+
+    .stackly-footer {
+        padding: 50px 6% 0;
+    }
+
+    /* TOP CONTENT */
+
+    .footer-top {
+        padding-bottom: 30px;
+        text-align: center;
+    }
+
+    .footer-top-heading {
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+    }
+
+    .footer-top-heading h2 {
+        font-size: 42px;
+        line-height: 1.2;
+        letter-spacing: -1px;
+    }
+
+    .footer-top-heading p {
+        font-size: 13px;
+        line-height: 1.8;
+        text-align: center;
+        max-width: 350px;
+    }
+
+    /* MAIN CONTENT */
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 40px 0;
+        text-align: center;
+    }
+
+    /* BRAND */
+
+    .footer-brand {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-logo-link {
+        margin-bottom: 18px;
+    }
+
+    .footer-logo {
+        width: 175px;
+        height: 52px;
+    }
+
+    .footer-description {
+        font-size: 13px;
+        line-height: 1.8;
+        max-width: 330px;
+        margin-bottom: 20px;
+    }
+
+    /* SOCIAL */
+
+    .footer-social {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .footer-social a {
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+    }
+
+    /* FOOTER LINKS */
+
+    .footer-column {
+        width: 100%;
+    }
+
+    .footer-column h3 {
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 12px;
+    }
+
+    .footer-column ul li a {
+        font-size: 13px;
+    }
+
+    /* CONTACT */
+
+    .footer-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-contact-item {
+        justify-content: center;
+        text-align: left;
+        font-size: 13px;
+        margin-bottom: 17px;
+    }
+
+    /* BOTTOM */
+
+    .footer-bottom {
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+        padding: 22px 0;
+        text-align: center;
+    }
+
+    .footer-bottom p {
+        font-size: 11px;
+    }
+
+    .footer-bottom-links {
+        justify-content: center;
+        gap: 22px;
+    }
+
+    .footer-bottom-links a {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =====================================
+   EXTRA SMALL MOBILE
+===================================== */
+
+@media (max-width: 380px) {
+
+    .footer-top-heading h2 {
+        font-size: 36px;
+    }
+
+    .footer-main {
+        gap: 30px;
+    }
+
+    .footer-logo {
+        width: 155px;
+    }
+
+    .footer-bottom-links {
+        gap: 15px;
+    }
+
+}

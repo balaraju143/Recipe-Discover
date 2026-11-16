@@ -1,0 +1,552 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly | Recipe Discovery</title>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/meal-plan.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR START -->
+
+    <header class="stackly-header">
+
+        <nav class="stackly-navbar">
+
+            <!-- LOGO -->
+
+            <div class="navbar-logo">
+                <a href="index.html">
+                    <img src="assets/black-logo.webp"
+                         alt="Stackly Logo"
+                         class="stackly-logo">
+                </a>
+            </div>
+
+
+            <!-- CENTER NAVIGATION -->
+
+            <div class="navbar-menu" id="navbarMenu">
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="index.html" class="nav-link ">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="explore.html" class="nav-link ">
+                            Explore Recipes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="meal-plan.html" class="nav-link active">
+                            My Meal Plan
+                        </a>
+                    </li>
+
+                </ul>
+
+                <!-- MOBILE LOGIN -->
+
+                <a href="404.html" class="mobile-login-btn">
+                    Login
+                </a>
+
+            </div>
+
+
+            <!-- DESKTOP LOGIN -->
+
+            <div class="navbar-actions">
+
+                <a href="404.html" class="navbar-login-btn">
+                    Login
+                    <span class="login-dot"></span>
+                </a>
+
+            </div>
+
+
+            <!-- MOBILE HAMBURGER -->
+
+            <button class="hamburger-menu"
+                    id="hamburgerMenu"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="navbarMenu">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+
+  <!-- =====================================
+         MEAL PLAN HERO
+    ====================================== -->
+
+    <main>
+
+        <section class="meal-plan-hero">
+
+            <div class="meal-plan-hero-overlay"></div>
+
+            <div class="meal-plan-hero-content">
+
+                <span class="meal-plan-eyebrow">
+                    YOUR PERSONAL FOOD JOURNEY
+                </span>
+
+                <h1>
+                    My Meal Plan
+                    <em>Made Delicious.</em>
+                </h1>
+
+                <p>
+                    Organize your favorite recipes, plan your meals
+                    and make every day delicious.
+                </p>
+
+                <a href="explore.html" class="meal-plan-explore-btn">
+                    Discover Recipes
+            
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             MEAL PLAN SECTION
+        ====================================== -->
+
+        <section class="meal-plan-section">
+
+            <div class="meal-plan-heading">
+
+                <div>
+                    <div class="meal-plan-section-label">
+                        <span></span>
+                        YOUR COLLECTION
+                    </div>
+
+                    <h2>
+                        Your Selected
+                        <em>Recipes.</em>
+                    </h2>
+
+                    <p>
+                        All your planned recipes in one place.
+                    </p>
+                </div>
+
+                <button type="button"
+                        class="clear-meal-btn"
+                        id="clearMealPlan">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                    Clear All
+                </button>
+
+            </div>
+
+
+            <!-- MEAL PLAN SUMMARY -->
+
+            <div class="meal-summary">
+
+                <div class="meal-summary-card">
+
+                    <div class="meal-summary-icon">
+                        <span class="material-symbols-outlined">
+                            restaurant_menu
+                        </span>
+                    </div>
+
+                    <div>
+                        <p>Total Recipes</p>
+                        <h3 id="totalRecipes">0</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="meal-summary-card">
+
+                    <div class="meal-summary-icon">
+                        <span class="material-symbols-outlined">
+                            schedule
+                        </span>
+                    </div>
+
+                    <div>
+                        <p>Total Cooking Time</p>
+                        <h3 id="totalCookingTime">0 min</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="meal-summary-card">
+
+                    <div class="meal-summary-icon">
+                        <span class="material-symbols-outlined">
+                            category
+                        </span>
+                    </div>
+
+                    <div>
+                        <p>Categories</p>
+                        <h3 id="totalCategories">0</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SAVED RECIPE COUNT -->
+
+            <div class="meal-list-heading">
+                <h3>Saved Recipes</h3>
+                <span id="savedRecipeCount">0 Recipes</span>
+            </div>
+
+
+            <!-- DYNAMIC MEAL PLAN CARDS -->
+
+            <div class="meal-plan-grid" id="mealPlanGrid">
+            </div>
+
+
+            <!-- EMPTY MEAL PLAN -->
+
+            <div class="empty-meal-plan" id="emptyMealPlan" hidden>
+
+                <div class="empty-meal-icon">
+                    <span class="material-symbols-outlined">
+                        lunch_dining
+                    </span>
+                </div>
+
+                <h3>Your Meal Plan Is Empty</h3>
+
+                <p>
+                    You haven't added any recipes yet.
+                    Discover something delicious and start planning!
+                </p>
+
+                <a href="explore.html">
+                    Explore Recipes
+                    <span class="material-symbols-outlined">
+                        arrow_forward
+                    </span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- =====================================
+         FOOTER START
+    ====================================== -->
+
+    <footer class="stackly-footer">
+
+
+        <!-- FOOTER MAIN CONTENT -->
+        <div class="footer-main">
+
+
+            <!-- BRAND COLUMN -->
+            <div class="footer-brand">
+
+                <a href="index.html"
+                   class="footer-logo-link">
+
+                    <img src="assets/black-logo.webp"
+                         alt="Stackly Recipe Discovery"
+                         class="footer-logo">
+
+                </a>
+
+
+                <p class="footer-description">
+
+                    Bringing people together through delicious food,
+                    fresh ingredients and everyday cooking inspiration.
+
+                </p>
+
+
+                <!-- SOCIAL ICONS -->
+                <div class="footer-social">
+
+                    <a href="404.html"
+                       aria-label="Instagram">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                    </a>
+
+
+                    <a href="404.html"
+                       aria-label="Facebook">
+
+                        <i class="fa-brands fa-facebook-f"></i>
+
+                    </a>
+
+
+                    <a href="404.html"
+                       aria-label="Pinterest">
+
+                        <i class="fa-brands fa-pinterest-p"></i>
+
+                    </a>
+
+
+                    <a href="404.html"
+                       aria-label="YouTube">
+
+                        <i class="fa-brands fa-youtube"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXPLORE COLUMN -->
+            <div class="footer-column">
+
+                <h3>
+                    Explore
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="explore.html">
+                            Explore Recipes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="meal-plan.html">
+                            My Meal Plan
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Popular Recipes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Recipe Categories
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- HELP COLUMN -->
+            <div class="footer-column">
+
+                <h3>
+                    Help & Support
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="404.html">
+                            Cooking Guide
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Recipe Tips
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            FAQs
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            About Ingredients
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Customer Support
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- CONTACT COLUMN -->
+            <div class="footer-column footer-contact">
+
+                <h3>
+                    Contact Us
+                </h3>
+
+
+                <div class="footer-contact-item">
+
+                    <span class="material-symbols-outlined">
+                        location_on
+                    </span>
+
+                    <p>
+                        Stackly Recipe Discovery,
+                        <br>
+                        Food & Cooking Inspiration,
+                        <br>
+                        India.
+                    </p>
+
+                </div>
+
+
+                <a href="404.html"
+                   class="footer-contact-item">
+
+                    <span class="material-symbols-outlined">
+                        mail
+                    </span>
+
+                    <span>
+                        Contact Support
+                    </span>
+
+                </a>
+
+
+                <a href="404.html"
+                   class="footer-contact-item">
+
+                    <span class="material-symbols-outlined">
+                        schedule
+                    </span>
+
+                    <span>
+                        Help & Information
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Stackly. All Rights Reserved.
+            </p>
+
+
+            <div class="footer-bottom-links">
+
+                <a href="404.html">
+                    Terms & Conditions
+                </a>
+
+                <a href="404.html">
+                    Privacy Policy
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="js/script.js"></script>
+
+    <script src="js/meal-plan.js"></script>
+
+</body>
+
+</html>
